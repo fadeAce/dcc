@@ -73,6 +73,10 @@ func main() {
 		if do == "halt" {
 			// it halt certain container
 		}
+		if do == "test" {
+			// begin to test case
+
+		}
 	}
 }
 
