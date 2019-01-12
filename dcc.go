@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/fadeAce/dcc/case"
 	"github.com/fadeAce/dcc/sidecar"
 	"github.com/fadeAce/dcc/types"
 	"gopkg.in/yaml.v2"
@@ -75,7 +76,7 @@ func main() {
 		}
 		if do == "test" {
 			// begin to test case
-
+			_case.Output()
 		}
 	}
 }
