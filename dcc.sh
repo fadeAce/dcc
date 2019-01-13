@@ -10,5 +10,5 @@ if [[ ${OSV} == "Darwin" ]]; then
 sed -i '' '1d' ${FILENAME};
 else sed -i '1d' ${FILENAME};
 fi
-sleep 5;
+sleep 3;
 done
