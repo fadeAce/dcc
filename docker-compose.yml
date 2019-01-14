@@ -8,7 +8,7 @@ version: "2"
 services:
   # dcc is for sidecar reduction
   dcc:
-    image: dcc:v0.0.1
+    image: fadeace/dcc:v0.0.1
     ports:
       - "2510:2510"
     volumes:
@@ -17,6 +17,6 @@ services:
     entrypoint: dcc serve
   # dcc-test is for app inside which a dcc.sh contained
   dcc-test:
-    image: dcc-test:v0.0.1
+    image: fadeace/dcc-test:v0.0.1
     volumes:
       - /Users/terrill/temp:/usr/local/bin/data
