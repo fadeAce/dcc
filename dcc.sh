@@ -1,5 +1,9 @@
 #!/bin/bash
 
+mkdir /usr/local/bin/data
+cd /usr/local/bin/data
+touch sock.dat
+
 FILENAME="/usr/local/bin/data/sock.dat"
 OSV=`uname`
 

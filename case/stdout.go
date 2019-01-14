@@ -8,7 +8,8 @@ import (
 )
 
 func Output() {
-	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	dir, err := os.Executable()
+	dir = filepath.Dir(dir)
 	// case using golang image
 	if dir == "/go" {
 		dir = "/usr/local/bin"

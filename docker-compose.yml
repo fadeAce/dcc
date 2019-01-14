@@ -14,7 +14,7 @@ services:
     volumes:
       # it's important for container to mount the same value
       - /Users/terrill/temp:/usr/local/bin/data
-    entrypoint: serve
+    entrypoint: dcc serve
   # dcc-test is for app inside which a dcc.sh contained
   dcc-test:
     image: dcc-test:v0.0.1
