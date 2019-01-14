@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 )
 
 // hello world, the web server
@@ -28,7 +29,16 @@ func handle(w http.ResponseWriter, req *http.Request) {
 		fmt.Printf("read resp.Body successfully:\n%v\n", cmd)
 		// open dat file
 		// do 1. append one cmd line there
-		err = appendToFile("./data/sock.dat", cmd.Cmd+"\n")
+		dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+		// case using golang image
+		if dir == "/go" {
+			dir = "/usr/local/bin"
+		}
+		// case using ubuntu image
+		if dir == "/" {
+			dir = "/usr/local/bin"
+		}
+		err = appendToFile(dir+"/data/sock.dat", cmd.Cmd+"\n")
 		if err != nil {
 			_, _ = io.WriteString(w, err.Error())
 			return
