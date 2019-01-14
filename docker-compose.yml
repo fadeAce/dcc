@@ -1,6 +1,9 @@
 # for test purpose
 # you need combine them to produce env manually
 
+# docker run -itd -p 2510:2510 -v /Users/terrill/temp:/usr/local/bin/data dcc:v0.0.1 serve
+# docker run -itd -v /Users/terrill/temp:/usr/local/bin/data dcc-test:v0.0.1
+
 version: "2"
 services:
   # dcc is for sidecar reduction

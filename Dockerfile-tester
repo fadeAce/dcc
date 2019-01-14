@@ -7,4 +7,6 @@ FROM ubuntu
 COPY --from=sourcer /go/src/github.com/fadeAce/dcc/dcc /usr/local/bin/
 COPY --from=sourcer /go/src/github.com/fadeAce/dcc/dcc.sh /usr/local/bin/dcc.sh
 RUN chmod 777 /usr/local/bin/dcc.sh
+RUN chmod 777 /usr/local/bin/dcc
+CMD ["/bin/bash"]
 CMD ["/usr/local/bin/dcc.sh"]

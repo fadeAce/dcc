@@ -4,13 +4,23 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"path/filepath"
 )
 
 func Output() {
-	file, err := os.OpenFile("./data/test.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0777)
+	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	// case using golang image
+	if dir == "/go" {
+		dir = "/usr/local/bin"
+	}
+	// case using ubuntu image
+	if dir == "/" {
+		dir = "/usr/local/bin"
+	}
+	file, err := os.OpenFile(dir+"/data/test.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0777)
 	if err != nil {
 		fmt.Println("err", err)
-		file, err = os.Create("./data/test.log")
+		file, err = os.Create(dir + "/data/test.log")
 		if err != nil {
 			fmt.Println("err", err)
 		}

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILENAME=$PWD"/data/sock.dat"
+FILENAME="/usr/local/bin/data/sock.dat"
 OSV=`uname`
 
 while true;
