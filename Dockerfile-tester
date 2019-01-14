@@ -1,0 +1,11 @@
+# build formal dcc sidecar image
+FROM golang as sourcer
+ADD . /go/src/github.com/fadeAce/dcc
+RUN cd /go/src/github.com/fadeAce/dcc && go build
+
+FROM ubuntu
+COPY --from=sourcer /go/src/github.com/fadeAce/dcc/dcc /usr/local/bin/
+COPY --from=sourcer /go/src/github.com/fadeAce/dcc/dcc.sh /usr/local/bin/dcc.sh
+RUN chmod 777 /dcc/dcc.sh
+CMD ["cd /dcc"]
+CMD ["/usr/local/bin/dcc.sh"]

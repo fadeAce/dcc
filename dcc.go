@@ -85,7 +85,7 @@ func send(addr, cmd string) {
 	cmdReq := types.Command{
 		Cmd: cmd,
 	}
-	homeURL := "http://" + addr + ":2511/cmd"
+	homeURL := "http://" + addr + ":2510/cmd"
 
 	buff, err := json.Marshal(cmdReq)
 	req, err := http.NewRequest("POST", homeURL, bytes.NewBuffer(buff))

@@ -1,0 +1,19 @@
+# for test purpose
+# you need combine them to produce env manually
+
+version: "2"
+services:
+  # dcc is for sidecar reduction
+  dcc:
+    image: dcc:v0.0.1
+    ports:
+      - "2510:2510"
+    volumes:
+      # it's important for container to mount the same value
+      - /Users/terrill/temp:/usr/local/bin/data
+    entrypoint: serve
+  # dcc-test is for app inside which a dcc.sh contained
+  dcc-test:
+    image: dcc-test:v0.0.1
+    volumes:
+      - /Users/terrill/temp:/usr/local/bin/data

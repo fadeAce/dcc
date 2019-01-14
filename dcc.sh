@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 FILENAME=$PWD"/data/sock.dat"
 OSV=`uname`
