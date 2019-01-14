@@ -6,6 +6,5 @@ RUN cd /go/src/github.com/fadeAce/dcc && go build
 FROM ubuntu
 COPY --from=sourcer /go/src/github.com/fadeAce/dcc/dcc /usr/local/bin/
 COPY --from=sourcer /go/src/github.com/fadeAce/dcc/dcc.sh /usr/local/bin/dcc.sh
-RUN chmod 777 /dcc/dcc.sh
-CMD ["cd /dcc"]
+RUN chmod 777 /usr/local/bin/dcc.sh
 CMD ["/usr/local/bin/dcc.sh"]
